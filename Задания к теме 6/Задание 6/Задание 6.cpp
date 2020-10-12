@@ -11,8 +11,7 @@ int main()
 	scanf_s("%lf", &A);
 
 	x = A * A;
-	x = x * pow(A,3);
-	A = x * pow(A,3);
+	A = x * x * x * x;
 
 	printf_s("Итоговое значение выражения: %lf", A);
 
