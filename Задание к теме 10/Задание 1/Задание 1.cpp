@@ -3,13 +3,13 @@
 
 int main()
 {
-	double A,B;
+	int A,B;
 	setlocale(LC_ALL, "Rus");
 	printf("Введите значение A:\n");
-	scanf_s("%lf", &A);
+	scanf_s("%d", &A);
 	printf("Введите значение B:\n");
-	scanf_s("%lf", &B);
-	if ((A > 2) and (B <= 3)) {
+	scanf_s("%d", &B);
+	if ((A > 2) && (B <= 3)) {
 		printf_s("Выражение справедливо");
 	}
 	else {
