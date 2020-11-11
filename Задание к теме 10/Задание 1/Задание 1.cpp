@@ -15,8 +15,6 @@ int main()
 	else {
 		printf_s("Выражение несправедливо");
 	}
-	
 
 	return 0;
-
 }
