@@ -3,29 +3,31 @@
 
 int main()
 {
-	int  a, b, c;
-	double mass[100], mass2[100];
+	int  a, b, c=0, mass[100];
 	setlocale(LC_ALL, "Rus");
 	printf("Введите количество :\n");
 	scanf_s("%d", &a);
 	printf("Введите элементы массива :\n");
 	for (b = 1; b <= a; b++) {
 		printf("mass[%d] = ", b);
-		scanf_s("%lf", &mass[b]);
+		scanf_s("%d", &mass[b]);
 	}
-
 	for (b = 1; b <= a; b++) {
-		mass2[b] = 0;
+		if (mass[b] % 2 != 0) {
+			c = mass[b];
+		}
 	}
-
-	for (b = 1; b <= a; b++) {
-		for (c = b; c <= a; c++) {
-			mass2[b] = mass2[b] + mass[c];
+	
+	if (c > 0) {
+		for (b = 1; b <= a; b++) {
+			if (mass[b] % 2 != 0) {
+				mass[b] = mass[b] + c;
+			}
 		}
 	}
 
 	for (b = 1; b <= a; b++) {
-		printf("Второй измененный массив :%lf\n", mass2[b]);
+		printf(" массив :%d\n", mass[b]);
 	}
 
 	return 0;
