@@ -2,7 +2,7 @@
 #include <locale.h>
 
 
-int main()
+int main(void)
 {
 
     int x;
@@ -30,7 +30,7 @@ int main()
     case 'V':
         switch (x) {
         case 1:
-           y = 'S';
+            y = 'S';
             break;
         case 0:
             y = 'V';
