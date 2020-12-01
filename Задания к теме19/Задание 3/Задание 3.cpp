@@ -3,7 +3,7 @@
 
 int main()
 {
-	int  a, b, c, d, e, e1, mass[100];
+	int  a, b, c, d, mass[100];
 	setlocale(LC_ALL, "Rus");
 	printf("Введите количество :\n");
 	scanf_s("%d", &a);
@@ -15,7 +15,8 @@ int main()
 
     c = 0;
     d = 0;
-    for (b = 0; b < a; ++b) {
+
+    for (b = 0; b < a; b++) {
         if (mass[c] > mass[b]) {
             c = b;
         }
@@ -28,13 +29,13 @@ int main()
     }
 
     a++;
-    for (b = a - 1; b > c; --b) {
+    for (b = a - 1; b > c; b--) {
         mass[b] = mass[b - 1];
     }
     mass[c] = 0;
 
     a++;
-    for (b = a - 1; b > d + 1; --b) {
+    for (b = a - 1; b > d + 1; b--) {
         mass[b] = mass[b - 1];
     }
     mass[d + 1] = 0;
