@@ -13,26 +13,26 @@ int main()
     switch ((x) % 10) {
     case 0:
     case 1:
-        printf("бел");
+        printf("бело");
         break;
     case 2:
     case 3:
-        printf("черн");
+        printf("черно");
         break;
     case 4:
     case 5:
-        printf("зелён");
+        printf("зелёно");
         break;
     case 6:
     case 7:
-        printf("красн");
+        printf("красно");
         break;
     case 8:
     case 9:
-        printf("жёлт");
+        printf("жёлто");
         break;
     }
-    switch ((x + 1) % 5) {
+    switch (x % 12) {
     case 0:
     case 1:
     case 2:
@@ -42,12 +42,12 @@ int main()
     case 9:
     case 10:
     case 11:
-        printf("ой ");
+        printf("й ");
         break;
     case 6:
     case 7:
     case 8:
-        printf("ого ");
+        printf("го ");
         break;
     }
 
