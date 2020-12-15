@@ -14,9 +14,9 @@ int main()
 
     for (a = 0; a < n; ++a) {
         printf("mass[%d]:\n", a + 1);
-        printf("  x : ");
+        printf("Введите  x : ");
         scanf_s("%f", &mass[a][0]);
-        printf("  y : ");
+        printf("Введите   y : ");
         scanf_s("%f", &mass[a][1]);
     }
 
