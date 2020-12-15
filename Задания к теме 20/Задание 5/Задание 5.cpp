@@ -3,41 +3,50 @@
 #include<math.h> 
 
 
-int main(void)
+int main()
 {
-    float a[10][2];
-    int n;
 
-    printf("N: ");
-    scanf("%i", &n);
+    float mass[10][2],l,m;
+    int n,a,b,c,x,y,z;
+    setlocale(LC_ALL, "Russian");
 
-    int i;
-    for (i = 0; i < n; ++i) {
-        printf("a[%i]:\n", i + 1);
-        printf("  x : ");
-        scanf("%f", &a[i][0]);
-        printf("  y : ");
-        scanf("%f", &a[i][1]);
+
+    printf("Введите n: ");
+    scanf_s("%i", &n);
+
+    for (a = 0; a < n; ++a) {
+        printf("mass[%d]:\n", a + 1);
+        printf("Введите x : ");
+        scanf_s("%f", &mass[a][0]);
+        printf("Введите y : ");
+        scanf_s("%f", &mass[a][1]);
     }
 
-    int p1, p2, p3, i2, i3;
-    float p, pmax = 0;
+    m = 0;
 
-    for (i = 0; i < n; ++i)
-        for (i2 = i + 1; i2 < n; ++i2)
-            for (i3 = i2 + 1; i3 < n; ++i3) {
-                p = 0;                 p += sqrt(pow(a[i][0] - a[i2][0], 2) + pow(a[i][1] - a[i2][1], 2));                 p += sqrt(pow(a[i][0] - a[i3][0], 2) + pow(a[i][1] - a[i3][1], 2));                 p += sqrt(pow(a[i2][0] - a[i3][0], 2) + pow(a[i2][1] - a[i3][1], 2));                 if (p > pmax) {
-                    p1 = i;
-                    p2 = i2;
-                    p3 = i3;
-                    pmax = p;
+    for (a = 0; a < n; ++a) {
+        for (b = a + 1; b < n; ++b) {
+            for (c = b + 1; c < n; ++c) {
+                l = 0;
+                l += sqrt(pow(mass[a][0] - mass[b][0], 2) + pow(mass[a][1] - mass[b][1], 2));
+                l += sqrt(pow(mass[a][0] - mass[c][0], 2) + pow(mass[a][1] - mass[c][1], 2));
+                l += sqrt(pow(mass[b][0] - mass[c][0], 2) + pow(mass[b][1] - mass[c][1], 2));
+                if (l > m) {
+                    x = a;
+                    y = b;
+                    z = c;
+                    m = l;
                 }
             }
+        }
+    }
 
+    printf("Периметр: %f\n", m);
+    printf("A %d :\n x: %f\n y: %f\n", x + 1, mass[x][0], mass[x][1]);
+    printf("B %d :\n x: %f\n y: %f\n", y + 1, mass[y][0], mass[y][1]);
+    printf("C %d :\n x: %f\n y: %f\n", z + 1, mass[z][0], mass[z][1]);
 
-    printf("P: %f\n", pmax);
-    printf("A %i :\n x: %f\n y: %f\n", p1 + 1, a[p1][0], a[p1][1]);
-    printf("A %i :\n x: %f\n y: %f\n", p2 + 1, a[p2][0], a[p2][1]);
-    printf("A %i :\n x: %f\n y: %f\n", p3 + 1, a[p3][0], a[p3][1]);
     return 0;
+
+
 }
